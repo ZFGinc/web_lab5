@@ -192,19 +192,18 @@
 ## JavaScript
 
 ```js
-//1.
-//  Создайте пустой объект user.
+//1 задание
+console.log("\nЗадание 1\n");
 var user1 = {};
-//  Добавьте свойство name со значением John.
 user1.name = "John";
-//  Добавьте свойство surname со значением Smith.
 user1.surname = "Smith";
-//  Измените значение свойства name на Pete.
-user1["name"] = "Pit";
-//  Удалите свойство name из объекта.
+user1["name"] = "Pete";
 delete user1.name;
 
-//2.
+console.log(user1);
+
+//2 задание
+console.log("\nЗадание 2\n");
 function isEmpty(obj) {
     if (Object.keys(obj).length)
         return true;
@@ -217,15 +216,17 @@ console.log(isEmpty(schedule)); // true
 schedule["8:30"] = "get up";
 console.log(isEmpty(schedule)); // false
 
-//3.
-const user3 = {
+//3 задание
+console.log("\nЗадание 3\n");
+const user2 = {
     name: "John"
 };
+console.log(user2);
+user2.name = "Pete"; 
+console.log(user2);
 
-// это будет работать?
-user3.name = "Pete"; // Да
-
-//4.
+//4 задание
+console.log("\nЗадание 4\n");
 const salaries = {
     John: 100,
     Ann: 160,
@@ -236,63 +237,64 @@ var sum = 0;
 for (const i in salaries) {
     sum += +salaries[i];
 }
+console.log(sum);
 
-//5.
+//5 задание
+console.log("\nЗадание 5\n");
 let menu = {
     width: 200,
     height: 300,
     title: "My menu"
 };
-
+console.log(menu);
 function multiplyNumeric(menu) {
     for (const x in menu) {
         if (!isNaN(menu[x]))
             menu[x] *= 2;
     }
 }
+console.log(menu);
 
-//6.
+//6 задание
+console.log("\nЗадание 6\n");
 let fruits = ["Яблоки", "Груша", "Апельсин"];
 
-// добавляем новое значение в "копию"
 let shoppingCart = fruits;
 shoppingCart.push("Банан");
 
-// что в fruits?
-console.log(fruits.length); //! 4 (ссылки одинаковые)
+console.log(fruits.length); 
 
-//7.
-//  Создайте массив styles с элементами «Джаз» и «Блюз».
+//7 задание
+console.log("\nЗадание 7\n");
 let styles = ['Джаз', 'Блюз'];
-//  Добавьте «Рок-н-ролл» в конец.
 styles.push('Рок-н-ролл');
-//  Замените значение в середине на «Классика». Ваш код для поиска значения в середине должен работать для массивов с любой длиной.
 styles[Math.floor(styles.length / 2)] = 'Классика';
-//  Удалите первый элемент массива и покажите его.
 console.log(styles.shift());
-//  Вставьте «Рэп» и «Регги» в начало массива.
 styles.unshift('Рэп', 'Регги');
+console.log(styles);
 
-//8. Каков результат? Почему?
+//8 задание
+console.log("\nЗадание 8\n");
 var arr = ["a", "b"];
 arr.push(function () {
     //alert(this);
 })
 console.log(arr[2]()); // undefined
 
-// 9. Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
+
+// 9 задание
+console.log("\nЗадание 9\n");
 let mas = [];
 do {
     let data = prompt();
-    //  Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
-    if (!isNaN(data) || data === null)
+    if (isNaN(data) || data === null)
         break;
     mas.push(data);
 } while (true);
-//  Подсчитывает и возвращает сумму элементов массива.
 console.log(mas.length);
 
-//10. найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+//10 задание
+console.log("\nЗадание 10\n");
 var arr10 = [1, -2, 3, 4, -9, 6];
 
 function getMaxSubSum(arr) {
@@ -305,9 +307,10 @@ function getMaxSubSum(arr) {
 
     return maxSum;
 }
-console.log("10.", maxSum(arr10));
+console.log(getMaxSubSum(arr10));
 
-//11. Удалить в массиве все числа, которые повторяются более двух раз. 
+//11 задание
+console.log("\nЗадание 11\n"); 
 function onlyDoubles(arr) {
     let temp = [];
     let map = new Map();
@@ -330,7 +333,8 @@ function onlyDoubles(arr) {
 let doubles = [1, 1, 1, 1, 1, 2, 3, 4, 4, 5, 6, 7, 7, 7];
 console.log(onlyDoubles(doubles));
 
-// 12.
+// 12 задание
+console.log("\nЗадание 12\n");
 function Left3Right1FromMax(arr) {
     let max = arr[0], idx = 0;
     for (let i = 1; i < arr.length; i++) {
@@ -355,24 +359,30 @@ function Left3Right1FromMax(arr) {
 }
 
 var arr12 = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+console.log(arr12);
 Left3Right1FromMax(arr12);
-console.log("12. " + arr12);
+console.log(arr12);
 
-// 13. Найдите сумму отрицательных элементов массива.
+// 13 задание
+console.log("\nЗадание 13\n");
 function NegativeSum(arr) {
     return arr.reduce((acc, elem) => elem < 0 ? acc += elem : acc);
 }
 var arr13 = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5];
-console.log("13.", NegativeSum(arr13));
+console.log(arr13);
+console.log(NegativeSum(arr13));
 
-// 14. Найдите произведение элементов массива с нечетными номерами.
+// 14 задание
+console.log("\nЗадание 14\n");
 function ProdOddIdx(arr) {
     return arr.reduce((acc, elem, idx) => idx % 2 != 0 ? acc *= elem : acc);
 }
 var arr14 = [1, 2, 3, 4, 5];
-console.log("14.", ProdOddIdx(arr14));
+console.log(arr14);
+console.log(ProdOddIdx(arr14));
 
-// 15. Найдите сумму элементов массива между двумя первыми нулями. Если двух нулей нет в массиве, то выведите ноль.
+// 15 задание
+console.log("\nЗадание 15\n");
 function betweenZeros(arr) {
     let pos1, pos2;
 
@@ -392,13 +402,17 @@ function betweenZeros(arr) {
 }
 
 var arr15 = [0, 2, 3, 3, 4, 0, 3, 3, 4, 5];
+console.log(arr15);
 console.log("между нулями:", betweenZeros(arr15));
 
-//16. Найдите наибольший элемент массива
+//16 задание
+console.log("\nЗадание 16\n");
 var arr = [5, 6, 7, 1, 2, 9, 11];
-console.log("16.", Math.max.apply(null, arr));
+console.log(arr);
+console.log(Math.max.apply(null, arr));
 
 // 17. Найдите наименьший четный элемент массива. Если такого нет, то выведите первый элемент.
+console.log("\nЗадание 17\n");
 function minOdd(arr) {
     let min = arr[0];
 
@@ -410,7 +424,8 @@ function minOdd(arr) {
     return min;
 }
 
-// 18. Преобразовать массив так, чтобы сначала шли нулевые элементы, а затем все остальные.
+// 18 задание
+console.log("\nЗадание 18\n");
 function StartsWithZeros(arr) {
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] === 0)
@@ -418,10 +433,12 @@ function StartsWithZeros(arr) {
     }
 }
 var arr18 = [0, 1, 2, 3, 0, 4, 5, 0, 6, 7, 0, 8, 0, 0, 0, 9];
+console.log(arr18);
 StartsWithZeros(arr18);
-console.log("18.", arr18);
+console.log(arr18);
 
-//19. Найдите сумму номеров минимального и максимального элементов.
+//19 задание\
+console.log("\nЗадание 19\n");
 function MinMaxIdxSum(arr) {
     let min = arr[0], max = arr[0], idx1 = 0, idx2 = 0;
     for (let i = 1; i < arr.length; i++) {
@@ -440,16 +457,20 @@ function MinMaxIdxSum(arr) {
 }
 
 var arr19 = [7, -5, 2, -1, 9, 1, 2, 0];
-console.log("19.", MinMaxIdxSum(arr19));
+console.log(arr19);
+console.log(MinMaxIdxSum(arr19));
 
-//20. Найдите минимальный по модулю элемент массива.
+//20 задание
+console.log("\nЗадание 20\n");
 function MinAbs(arr) {
     return arr.reduce((a, b) => Math.min(Math.abs(a), Math.abs(b)));
 }
 let arr20 = [-3, -2, -1, 1, 2, 3];
+console.log(arr20);
 console.log("20.", MinAbs(arr20));
 
-//21. Заполнить массив из 10 элементов случайными числами в интервале [-10..10] и сделать реверс отдельно для 1-ой и 2-ой половин массива.
+//21 задание
+console.log("\nЗадание 21\n");
 function RandRevers() {
     let arr = [];
     for (let i = 0; i < 10; i++) {
@@ -460,8 +481,8 @@ function RandRevers() {
 }
 console.log(RandRevers());
 
-//22. Заполнить массив из 12 элементов случайными числами в интервале [-12..12]
-//    и выполнить циклический сдвиг ВПРАВО на 4 элемента.
+//22 задание
+console.log("\nЗадание 22\n");
 function RandMoveLeft4() {
     let arr = [];
     for (let i = 0; i < 10; i++) {
